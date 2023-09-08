@@ -3,6 +3,15 @@ class HolbertonCourse {
     this._name = name;
     this._length = length;
     this._students = students;
+    if (typeof newName !== 'string') {
+      throw TypeError('Name needs to be a string');
+    }
+    if (typeof newLength !== 'number') {
+      throw TypeError('Length needs to be a number');
+    }
+    if (!newStudents.every((students) => typeof students === 'string') || !Array.isArray(newStudents)) {
+      throw TypeError('newStudents needs to be a string');
+    }
   }
 
   get name() {
